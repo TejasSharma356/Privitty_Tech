@@ -164,7 +164,7 @@ function ProtocolStack() {
   }, [protos.length]);
 
   return (
-    <div className={s.protocolWrap} style={{ padding: '2rem 1.5rem', background: 'rgba(255,255,255,0.02)', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', position: 'relative' }}>
+    <div style={{ padding: '2rem 1.5rem', background: 'rgba(255,255,255,0.02)', borderRadius: '16px', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', position: 'relative', width: '100%' }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', zIndex: 2 }}>
         {protos.map((p, i) => (
           <div key={p} style={{ 
