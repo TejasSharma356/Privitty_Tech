@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Agent Configs and Backups
+AGENTS.md
+CLAUDE.md
+_framer_backup/
+privitty-website.html
