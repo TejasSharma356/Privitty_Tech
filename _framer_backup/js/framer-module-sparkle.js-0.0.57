@@ -1,0 +1,8 @@
+/*
+ * Sparkle (phosphor-icons/Sparkle@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "../js/sparkle.js"
+export { default } from "../js/sparkle.js"

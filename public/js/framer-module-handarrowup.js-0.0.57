@@ -1,0 +1,8 @@
+/*
+ * HandArrowUp (phosphor-icons/HandArrowUp@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "../js/handarrowup.js"
+export { default } from "../js/handarrowup.js"

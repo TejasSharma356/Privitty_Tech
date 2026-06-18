@@ -1,0 +1,8 @@
+/*
+ * Scan (phosphor-icons/Scan@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "../js/scan.js"
+export { default } from "../js/scan.js"

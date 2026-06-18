@@ -1,0 +1,8 @@
+/*
+ * Question (phosphor-icons/Question@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "../js/question.js"
+export { default } from "../js/question.js"

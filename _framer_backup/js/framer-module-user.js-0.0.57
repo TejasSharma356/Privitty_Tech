@@ -1,0 +1,8 @@
+/*
+ * User (phosphor-icons/User@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "../js/user.js"
+export { default } from "../js/user.js"

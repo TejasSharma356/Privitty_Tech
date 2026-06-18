@@ -1,0 +1,8 @@
+/*
+ * PlusCircle (phosphor-icons/PlusCircle@0.0.53)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "../js/pluscircle.js"
+export { default } from "../js/pluscircle.js"

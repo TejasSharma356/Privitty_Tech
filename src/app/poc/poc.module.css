@@ -1,0 +1,146 @@
+:root {
+  --neu-bg: #f5f5f5;
+  --neu-shadow-dark: rgba(0, 0, 0, 0.08);
+  --neu-shadow-light: rgba(255, 255, 255, 0.8);
+  
+  --neu-shadow-extrude: 
+    -6px -6px 12px var(--neu-shadow-light), 
+     6px  6px 12px var(--neu-shadow-dark);
+     
+  --neu-shadow-extrude-sm: 
+    -3px -3px 6px var(--neu-shadow-light), 
+     3px  3px 6px var(--neu-shadow-dark);
+
+  --neu-shadow-inset: 
+    inset -4px -4px 8px var(--neu-shadow-light), 
+    inset  4px  4px 8px var(--neu-shadow-dark);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--neu-bg);
+  font-family: 'Inter', sans-serif;
+  padding: 2rem;
+}
+
+.header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.header p {
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* --- Analytics Card --- */
+.card {
+  width: 500px;
+  height: 350px;
+  background-color: var(--neu-bg);
+  border-radius: 24px;
+  box-shadow: var(--neu-shadow-extrude);
+  padding: 3rem 2rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  gap: 1.5rem;
+}
+
+/* The vertical "AFTER" text */
+.yAxisLabel {
+  position: absolute;
+  left: 2rem;
+  bottom: 3rem;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 0.1em;
+}
+
+/* The individual bars */
+.barWrapper {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  position: relative;
+}
+
+.bar {
+  width: 45px;
+  background-color: var(--neu-bg);
+  border-radius: 12px;
+  box-shadow: var(--neu-shadow-extrude-sm);
+  transform-origin: bottom center;
+}
+
+/* Tooltips */
+.tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--neu-bg);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  box-shadow: var(--neu-shadow-extrude-sm);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+}
+
+/* Toggle Button */
+.toggleBtn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 99px;
+  background-color: var(--neu-bg);
+  color: #333;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: var(--neu-shadow-extrude);
+  transition: all 0.2s ease;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.toggleBtn:hover {
+  color: #000;
+}
+
+.toggleBtn:active {
+  box-shadow: var(--neu-shadow-inset);
+}
+
+.homeBtn {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  background-color: var(--neu-bg);
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: var(--neu-shadow-extrude);
+  transition: all 0.2s ease;
+}
+
+.homeBtn:hover {
+  box-shadow: var(--neu-shadow-inset);
+  color: #000;
+}

@@ -1,0 +1,8 @@
+/*
+ * GearSix (phosphor-icons/GearSix@0.0.53)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "../js/gearsix.js"
+export { default } from "../js/gearsix.js"

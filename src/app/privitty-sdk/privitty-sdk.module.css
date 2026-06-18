@@ -1,0 +1,119 @@
+/* Privitty SDK — scaled bento grid */
+:root {
+  --bg: #f5f5f5;
+  --card-shadow:
+    0px 0.707px 0.707px -0.667px rgba(0,0,0,0.08),
+    0px 1.807px 1.807px -1.333px rgba(0,0,0,0.08),
+    0px 3.622px 3.622px -2px rgba(0,0,0,0.07),
+    0px 6.866px 6.866px -2.667px rgba(0,0,0,0.07),
+    0px 13.647px 13.647px -3.333px rgba(0,0,0,0.05),
+    0px 30px 30px -4px rgba(0,0,0,0.02),
+    inset 0px 3px 1px 0px rgb(255,255,255);
+  --neu-out: -6px -6px 14px rgba(255,255,255,0.85), 6px 6px 14px rgba(0,0,0,0.09);
+  --neu-out-sm: -3px -3px 7px rgba(255,255,255,0.85), 3px 3px 7px rgba(0,0,0,0.09);
+  --neu-in: inset -4px -4px 10px rgba(255,255,255,0.85), inset 4px 4px 10px rgba(0,0,0,0.09);
+}
+
+.page { min-height:100vh; display:flex; flex-direction:column; font-family:'Inter',-apple-system,sans-serif; color:#000; background:var(--bg); position:relative; }
+.videoBg { position:fixed; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1; pointer-events:none; filter:brightness(0.69) grayscale(1) invert(1); }
+.pageContent { padding-top:68px; flex:1; display:flex; flex-direction:column; }
+
+.hero { text-align:center; padding:7rem 2rem 5rem; max-width:900px; margin:0 auto; }
+.eyebrow { display:inline-block; font-size:0.82rem; text-transform:uppercase; letter-spacing:0.12em; color:#888; margin-bottom:1.25rem; font-weight:600; }
+.title { font-size:clamp(3.2rem,6vw,5rem); font-weight:700; letter-spacing:-0.045em; margin:0 0 1.6rem; color:#000; line-height:1.08; }
+.subtitle { font-size:clamp(1.1rem,2vw,1.35rem); line-height:1.75; color:#555; max-width:680px; margin:0 auto 2.4rem; }
+.heroActions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+.btnPrimary { background:#000; color:#fff; padding:0.95rem 2rem; border-radius:14px; font-weight:600; font-size:1rem; text-decoration:none; transition:all 0.2s ease; box-shadow:0 4px 16px rgba(0,0,0,0.2); }
+.btnPrimary:hover { background:#222; transform:translateY(-2px); }
+.btnSecondary { background:rgba(255,255,255,0.72); color:#000; padding:0.95rem 2rem; border-radius:14px; font-weight:600; font-size:1rem; text-decoration:none; border:1px solid rgba(0,0,0,0.09); transition:all 0.2s ease; }
+.btnSecondary:hover { background:rgba(255,255,255,0.95); transform:translateY(-2px); }
+
+.section { padding:5.5rem 2.5rem; max-width:1240px; margin:0 auto; width:100%; box-sizing:border-box; }
+.sectionHeader { text-align:center; max-width:700px; margin:0 auto 3.2rem; }
+.sectionLabel { display:block; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.12em; color:#888; font-weight:700; margin-bottom:0.75rem; }
+.sectionTitle { font-size:clamp(2.2rem,4vw,3.2rem); font-weight:700; letter-spacing:-0.035em; margin:0 0 0.85rem; color:#000; line-height:1.15; }
+
+.bentoRow2 { display:grid; grid-template-columns:1fr 1fr; gap:22px; align-items:stretch; }
+.bentoRow3 { display:grid; grid-template-columns:1.8fr 1fr; gap:22px; }
+.bentoSpan2 { /* already handled by grid-template-columns */ }
+
+.bentoCard {
+  background:var(--bg); border-radius:28px; padding: 50px;
+  box-shadow:var(--card-shadow);
+  display:flex; flex-direction:column; gap:28px;
+  overflow:hidden;
+  transition:transform 0.28s ease;
+}
+.bentoCard:hover { transform:translateY(-4px); }
+
+.cardTag { font-size: 0.8rem; text-transform:uppercase; letter-spacing:0.12em; color:#888; font-weight:700; margin-bottom:6px; }
+.cardTitle { font-size: 2rem; font-weight:700; letter-spacing:-0.025em; margin:0 0 8px; color:#000; line-height:1.25; }
+.cardBody { font-size: 1.15rem; line-height:1.65; color:rgba(0,0,0,0.55); margin:0; }
+.cardTopText { flex-shrink:0; }
+
+/* CODE CARD */
+.codeCard {
+  background:#1e1e2e;
+  border-radius:18px;
+  padding:20px 24px;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  min-height:220px;
+}
+.trafficLights { display:flex; gap:8px; }
+.codeLines { display:flex; flex-direction:column; gap:0; font-family:'JetBrains Mono','Fira Code','Courier New',monospace; font-size:0.88rem; flex:1; }
+.codeLine { white-space:pre; line-height:1.55; }
+.cursor { display:inline-block; width:2px; height:1rem; background:#e2e8f0; animation:blink 1s step-end infinite; }
+@keyframes blink { 50% { opacity:0; } }
+
+/* POLICY BUILDER */
+.policyWrap { flex:1; display:flex; flex-direction:column; gap:16px; }
+.policyLabel { font-size:0.76rem; text-transform:uppercase; letter-spacing:0.1em; color:#888; font-weight:700; }
+.policyField { display:flex; align-items:center; justify-content:space-between; gap:12px; background:rgba(255,255,255,0.8); border-radius:14px; padding:16px 18px; box-shadow:0 1px 3px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.9); }
+.policyKey { font-size:0.92rem; font-weight:600; color:#555; font-family:'JetBrains Mono','Courier New',monospace; }
+.policyChip { font-size:0.85rem; font-weight:600; color:#000; background:rgba(0,0,0,0.06); padding:5px 13px; border-radius:99px; }
+.durationRow { display:flex; gap:7px; }
+.durationBtn { border:none; border-radius:99px; padding:6px 14px; background:var(--bg); font-size:0.82rem; font-weight:600; cursor:pointer; box-shadow:var(--neu-out-sm); font-family:inherit; color:#555; transition:all 0.15s; }
+.durationBtnActive { background:#000; color:#fff; box-shadow:none; }
+.toggleSwitch { width:48px; height:26px; border-radius:99px; background:var(--bg); box-shadow:var(--neu-in); border:none; cursor:pointer; position:relative; transition:background 0.2s; }
+.toggleOn { background:#000; }
+.toggleKnob { position:absolute; width:20px; height:20px; border-radius:50%; background:#fff; top:3px; left:3px; transition:transform 0.2s; box-shadow:0 1px 4px rgba(0,0,0,0.2); }
+.toggleOn .toggleKnob { transform:translateX(22px); }
+.policyGenerate { background:rgba(0,0,0,0.04); border-radius:14px; padding:14px 18px; }
+.policyCode { font-family:'JetBrains Mono','Courier New',monospace; font-size:0.85rem; color:#333; font-weight:500; }
+
+/* INTEGRATIONS */
+.integrationsWrap { display:grid; grid-template-columns:repeat(auto-fill,minmax(88px,1fr)); gap:14px; padding-top:4px; }
+.integrationIcon { display:flex; flex-direction:column; align-items:center; gap:8px; background:var(--bg); border-radius:18px; padding:22px 12px; box-shadow:var(--neu-out-sm); cursor:default; }
+.integrationLabel { font-size:0.82rem; font-weight:700; color:#000; text-align:center; }
+
+/* ONE-CALL */
+.oneCallWrap { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:1rem 0; }
+.oneCallNumber { font-size:4.5rem; font-weight:800; letter-spacing:-0.06em; color:#000; line-height:1; min-height:5rem; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.oneCallSub { font-size:0.9rem; color:#888; font-weight:600; }
+.oneCallCode { font-family:'JetBrains Mono','Courier New',monospace; font-size:0.85rem; color:#333; background:rgba(0,0,0,0.05); padding:8px 18px; border-radius:10px; font-weight:500; }
+
+/* PROCESS STEPS */
+.processGrid { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+.processCard { background:var(--bg); border-radius:28px; padding:40px; box-shadow:var(--card-shadow); display:flex; flex-direction:column; gap:12px; min-height:260px; transition:transform 0.28s ease; }
+.processCard:hover { transform:translateY(-4px); }
+.processTag { font-size:0.76rem; text-transform:uppercase; letter-spacing:0.1em; color:#888; font-weight:700; }
+.processNumber { font-size:3.5rem; font-weight:800; letter-spacing:-0.06em; color:#000; line-height:1; }
+.processTitle { font-size:clamp(1.15rem,1.8vw,1.4rem); font-weight:700; letter-spacing:-0.025em; margin:0; color:#000; }
+.processBody { font-size:0.98rem; line-height:1.6; color:rgba(0,0,0,0.52); margin:0; font-family:'JetBrains Mono','Courier New',monospace; flex:1; }
+
+@media (max-width:1080px) {
+  .processGrid { grid-template-columns:1fr 1fr; }
+  .bentoRow3 { grid-template-columns:1fr; }
+}
+@media (max-width:800px) {
+  .bentoRow2 { grid-template-columns:1fr; }
+  .processGrid { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:540px) {
+  .processGrid { grid-template-columns:1fr; }
+  .bentoCard { padding: 50px; }
+  .processCard { padding:28px; min-height:auto; }
+}

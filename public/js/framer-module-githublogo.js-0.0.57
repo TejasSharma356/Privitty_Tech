@@ -1,0 +1,8 @@
+/*
+ * GithubLogo (phosphor-icons/GithubLogo@0.0.57)
+ *
+ * Learn More: https://www.framer.com/asset-urls
+ */
+
+export * from "../js/githublogo.js"
+export { default } from "../js/githublogo.js"
